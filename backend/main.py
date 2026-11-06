@@ -1,4 +1,4 @@
-
+import sys
 from pathlib import Path
 from uuid import uuid4
 import shutil
@@ -17,17 +17,22 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173"
-    ],
+   
+allow_origins=[
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://tone-match-ai-eight.vercel.app",
+],
+
     allow_credentials=False,
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type"]
 )
 
 RAIZ = Path(__file__).resolve().parent.parent
-PYTHON = RAIZ / ".venv" / "Scripts" / "python.exe"
+
+PYTHON = sys.executable
+
 PASTA_PROCESSAMENTO = RAIZ / "processamentos"
 
 PASTA_PROCESSAMENTO.mkdir(exist_ok=True)
