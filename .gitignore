@@ -1,0 +1,31 @@
+
+# Dependências
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Arquivos gerados
+dist/
+build/
+processamentos/
+separados/
+audios/
+*.wav
+*.mp3
+*.flac
+
+# Configurações privadas
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Arquivos temporários
+*.log
+.DS_Store
+Thumbs.db
+
+src/SeparadorGuitarra_backup.jsx.txt
